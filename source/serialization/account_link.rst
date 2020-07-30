@@ -4,7 +4,7 @@
 Account Link Schemas
 ####################
 
-.. note:: The `catbuffer schemas <https://github.com/nemtech/catbuffer>`_ repository defines how each transaction type should be serialized. In combination with the `catbuffer-generators <https://github.com/nemtech/catbuffer-generators>`_ project, developers can generate builder classes for a given set of programming languages. 
+.. note:: The `catbuffer schemas <https://github.com/nemtech/catbuffer>`_ repository defines how each transaction type should be serialized. In combination with the `catbuffer-generators <https://github.com/nemtech/catbuffer-generators>`_ project, developers can generate builder classes for a given set of programming languages.
 
 ****************
 Account Key Link
@@ -15,8 +15,9 @@ Account Key Link
 AccountKeyLinkTransaction
 =========================
 
+This transaction is required for all accounts wanting to activate delegated harvesting.
+
 Announce an AccountKeyLinkTransaction to delegate the account importance score to a proxy account.
-Required for all accounts willing to activate delegated harvesting.
 
 **Version**: 0x01
 
@@ -56,9 +57,9 @@ Node Key Link
 NodeKeyLinkTransaction
 ======================
 
-Announce a NodeKeyLinkTransaction to link a public key to an account.
-TLS uses the linked public key to create sessions.
-Required for node operators.
+This transaction is required for all accounts willing to activate delegated harvesting.
+
+Announce a NodeKeyLinkTransaction to link an account with a public key used by TLS to create sessions.
 
 **Version**: 0x01
 

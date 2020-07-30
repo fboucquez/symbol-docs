@@ -23,7 +23,7 @@ Prerequisites
 Method #01: Using the SDK
 *************************
 
-Open a new file and call the ``getAccountInfo`` function available in the ``AccountHttp`` repository. 
+Open a new file and call the ``getAccountInfo`` function from the ``AccountHttp`` repository. 
 Pass your account's address as a parameter.
 
 .. example-code::
@@ -47,7 +47,9 @@ Pass your account's address as a parameter.
 Method #02: Using the CLI
 *************************
 
-Open a terminal window and run the following command to get the account details.
+Open a terminal window and run the following command.
+
+Replace ``TCHBDE-NCLKEB-ILBPWP-3JPB2X-NY64OE-7PYHHE-32I`` with the address you want to query.
 
 .. viewsource:: ../../resources/examples/bash/account/GettingAccountInformation.sh
     :language: bash

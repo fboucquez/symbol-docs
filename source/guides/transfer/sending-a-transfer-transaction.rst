@@ -12,7 +12,7 @@ Sending mosaics and messages between two accounts
 
 Define, sign, and announce a transfer transaction.
 
-This guide will show you how to send 10 |networkcurrency| from your account to Bob's, whose address is ``TBONKW-COWBZY-ZB2I5J-D3LSDB-QVBYHB-757VN3-SKPP``.
+This guide will show you how to send 10 |networkcurrency| from your account to Bob's, whose address is ``TB6Q5E-YACWBP-CXKGIL-I6XWCH-DRFLTB-KUK34I-YJQ``.
 
 *************
 Prerequisites
@@ -33,7 +33,7 @@ Method #01: Using the Desktop Wallet
     :width: 800px
 
 2. Fill out the necessary information for the transfer transaction.
-For this example, you need to specify that you are sending 10 XYM to Bob (``TCQSO3-LUEWJZ-X4ITOY-4YWVL5-TAOEJ5-6YXUMS-AJHH``).  You can add a message, but it is not necessary in this case.
+For this example, you need to specify that you are sending 10 XYM to Bob (``TB6Q5E-YACWBP-CXKGIL-I6XWCH-DRFLTB-KUK34I-YJQ``).  You can add a message, but it is not necessary in this case.
 
 .. figure:: ../../resources/images/screenshots/desktop-transfer-2.gif
     :align: center
@@ -102,7 +102,7 @@ If you own more than one mosaic, you can send them together in the same transact
         :end-before: /* end block 01 */
 
 3. Sign the transaction with your account.
-Then, include the network generation hash seed to make the transaction only valid for your network.
+Then, include the network generation hash seed to make the transaction only valid for your network. 
 To retrieve the network generration hash seed, open ``nodeUrl + '/node/info'`` in a new browser tab and copy ``meta.networkGenerationHashSeed`` value.
 
 .. example-code::
@@ -143,15 +143,19 @@ To retrieve the network generration hash seed, open ``nodeUrl + '/node/info'`` i
 
 5. Open the terminal where you are monitoring the transaction's status.
 The transaction should appear as confirmed after ±15 seconds and the amount defined gets transferred from the sender's account to the recipient's account.
-If the terminal raises an error, you can check the error code description `here <https://github.com/nemtech/symbol-openapi/blob/master/spec/core/transaction/schemas/TransactionStatusTypeEnum.yml>`_.
+If the terminal raises an error, you can check the error code description `here <https://github.com/nemtech/symbol-openapi/blob/main/spec/core/transaction/schemas/TransactionStatusTypeEnum.yml>`_.
 
 *************************
 Method #03: Using the CLI
 *************************
 
-Open a terminal window and run the following command to transfer 10 XYM from your default account to Bob's address.
+Open a terminal window and run the following command to transfer 10 XYM from your default account.
+
+Remember to replace ``TB6Q5E-YACWBP-CXKGIL-I6XWCH-DRFLTB-KUK34I-YJQ`` with the recipient address you want to send mosaics too 
+and ``@symbol.xym::10000000`` with the desired absolute amount.
+
+Optionally, you can set a custom message with the option ``--message``.
 
 .. viewsource:: ../../resources/examples/bash/transfer/SendingATransferTransaction.sh
     :language: bash
     :start-after: #!/bin/sh
-

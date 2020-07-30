@@ -12,9 +12,9 @@ Assigning metadata to an account
 
 Add custom data to an account.
 
-**********
-Background
-**********
+********
+Use case
+********
 
 Bob works as a digital notary that stamp accounts on |codename|'s public blockchain.
 When a customer comes to Bob to notarize a document, he checks the authentication of the customer's documents then tags the customer's account with the digitized document as metadata.
@@ -49,7 +49,7 @@ Creating the account
 
     Enter network type (MIJIN_TEST, MIJIN, MAIN_NET, TEST_NET): TEST_NET
     Do you want to save it? [y/n]: y
-    Enter a Symbol Node URL. (Example: http://localhost:3000): http://api-01.ap-northeast-1.testnet-0951-v1.symboldev.network:3000/
+    Enter a Symbol Node URL. (Example: http://localhost:3000): http://api-01.us-east-1.096x.symboldev.network:3000/
     Insert profile name: alice
 
 *************************
@@ -143,11 +143,3 @@ Monitor the network until the transaction gets confirmed, and then announce the 
     symbol-cli transaction cosign --hash <transaction-hash> --profile alice
 
 7. If everything goes well, now Alice :doc:`has assigned the metadata value <getting-metadata-entries-attached-to-an-account>` ``{bobPublicKey, CERT, 123456}``, which can be read as "Alice account has the certificate number 123456 and it was verified by Bob".
-
-*************************
-Method #02: Using the CLI
-*************************
-
-.. viewsource:: ../../resources/examples/bash/metadata/AssigningMetadataToAnAccount.sh
-    :language: bash
-    :start-after: #!/bin/sh

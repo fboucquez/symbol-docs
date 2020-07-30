@@ -70,7 +70,7 @@ To harvest locally, the account should provide the next properties in :propertie
     enableAutoHarvesting; bool; Set to true if delegated harvesting is enabled.; false
     maxUnlockedAccounts; uint32_t; Maximum number of delegated harvesting accounts.; 5
     delegatePrioritizationPolicy; harvesting::DelegatePrioritizationPolicy; Delegate harvester prioritization policy used to keep accounts once the node stores ``maxUnlockedAccounts``. Possible values are "Importance" or "Age".; Importance
-    beneficiaryPublicKey; string; The public key of the account that will receive a percentage of the block fees defined by the harvestBeneficiaryPercentage.; 0000000000000000000000000000000000000000000000000000000000000000
+    beneficiaryAddress; Address; Address of the account that will receive a percentage of the block fees defined by the harvestBeneficiaryPercentage.; 0000000000000000000000000000000000000000000000000000000000000000
 
 Local harvesting is secure as long as no one accesses your node instance, which is storing the private key.
 
@@ -96,7 +96,7 @@ In order for the remote account to be accepted for delegated harvesting, the rem
 
 .. note:: The remote account cannot be involved in any transaction while it is a delegated account.
 
-Then, the account needs to send a `special encrypted message <https://github.com/nemtech/NIP/blob/master/NIPs/nip-0009.md>`_ to the node via a :doc:`TransferTransaction <transfer-transaction>`.
+Then, the account needs to send a `special encrypted message <https://github.com/nemtech/NIP/blob/main/NIPs/nip-0009.md>`_ to the node via a :doc:`TransferTransaction <transfer-transaction>`.
 The message must contain the remote's account **proxy private key**  encrypted using AES, making the transaction readable only by the recipient.
 
 The node receives an encrypted message using :ref:`WebSockets <websockets>`.
@@ -136,6 +136,7 @@ Related transactions
     :delim: ;
     
     0x414C; :ref:`AccountKeyLinkTransaction <account-key-link-transaction>`; Delegate the account importance to a proxy account. Required for all accounts willing to activate delegated harvesting.
+    0x424C; :ref:`NodeKeyLinkTransaction <node-key-link-transaction>`; Link an account with a public key used by TLS to create sessions. Required for all accounts willing to activate delegated harvesting.
     0x4243; :ref:`VrfKeyLinkTransaction <vrf-key-link-transaction>`; Link an account with a VRF public key. Required for all harvesting eligible accounts.
 
 ******

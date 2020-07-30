@@ -12,14 +12,16 @@ Activating delegated harvesting
 
 Share your account's importance securely with a node.
 
-**********
-Background
-**********
+.. note:: **July 30, 2019**: This guide is outdated and not compatible with latest 0.9.6 milestone. We will publish up-to-date instructions on how to activate delegated harvesting soon.
+
+********
+Use case
+********
 
 :ref:`Delegated harvesting <delegated-harvesting>` enables accounts to receive rewards from creating new blocks without running a node.
 The following guide will show you how to delegate your account importance without compromising the account's funds.
 
-In this process, you will **delegate your main account (M) importance** to a **proxy public key (R)**. Then,you will request a node to **add your remote account (R)** as a delegated harvester with the **announcer account (A)**.
+In this process, you will **delegate your main account (M) importance** to a **proxy public key (R)**. Then, you will request a node to **add your remote account (R)** as a delegated harvester with the **announcer account (A)**.
 
 .. mermaid:: ../../resources/diagrams/delegated-harvesting-activation.mmd
     :caption: Delegated harvesting activation diagram
@@ -32,13 +34,11 @@ Prerequisites
 
 - Complete :doc:`sending mosaics and messages between two accounts guide <../transfer/sending-a-transfer-transaction>`
 
-Before you can activate delegated harvesting, you will need to have three accounts:
+Before you can activate delegated harvesting, you need to have three accounts:
 
-* Create a **main account (M)** with at least ``10,000`` |networkcurrency| units.
-* Create an **announcer account (A)** with enough |networkcurrency|  units to announce a transaction.
-* Create a brand new **remote account (R)** that did not send or receive any transactions.
-
-.. note:: Follow this guide to :ref:`create new accounts <setup-creating-a-test-account>`.
+* **Main account (M)** with at least ``10,000`` harvesting mosaic units.
+* **Announcer account (A)** with enough |networkcurrency|  units to announce a transaction.
+* **Remote account (R)** that did not send or receive any transactions.
 
 *************************
 Method #01: Using the SDK
@@ -143,7 +143,7 @@ Method #02: Using the CLI
 
 .. code-block:: bash
 
-    symbol-cli profile import --private-key 0000000000000000000000000000000000000000000000000000000000000000 --network TEST_NET --url http://api-01.ap-northeast-1.testnet-0951-v1.symboldev.network:3000 --profile main
+    symbol-cli profile import --private-key 0000000000000000000000000000000000000000000000000000000000000000 --network TEST_NET --url http://api-01.us-east-1.096x.symboldev.network:3000 --profile main
 
 2. Create a brand new account. This account will be your **remote account (R)**.
 
@@ -161,7 +161,7 @@ Method #02: Using the CLI
 
 .. code-block:: bash
 
-    symbol-cli profile import --private-key FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF --network TEST_NET --url http://api-01.ap-northeast-1.testnet-0951-v1.symboldev.network:3000 --profile announcer
+    symbol-cli profile import --private-key FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF --network TEST_NET --url http://api-01.us-east-1.096x.symboldev.network:3000 --profile announcer
 
 4. Send a request to the node you want to be added as a delegated harvester with **A**. Replace ``<recipient-public-key>`` with the node's public key and ``<remote-private-key>`` with **R's private key**.
 

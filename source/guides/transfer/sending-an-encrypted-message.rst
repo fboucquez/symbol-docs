@@ -11,9 +11,9 @@ Sending an encrypted message
 
 Send an encrypted message that only can be read by the recipient account.
 
-**********
-Background
-**********
+********
+Use case
+********
 
 Imagine that Alice wants to timestamp a sensitive message to send to an account representing her academic certificate.
 
@@ -42,7 +42,7 @@ Create two accounts: one for Alice and another for the certificate with the :ref
 
     Enter network type (MIJIN_TEST, MIJIN, MAIN_NET, TEST_NET): TEST_NET
     Do you want to save it? [y/n]: y
-    Enter a Symbol Node URL. (Example: http://localhost:3000): http://api-01.ap-northeast-1.testnet-0951-v1.symboldev.network:3000/
+    Enter a Symbol Node URL. (Example: http://localhost:3000): http://api-01.us-east-1.096x.symboldev.network:3000/
     Insert profile name: alice
 
 .. code-block:: bash
@@ -51,7 +51,7 @@ Create two accounts: one for Alice and another for the certificate with the :ref
 
     Enter network type (MIJIN_TEST, MIJIN, MAIN_NET, TEST_NET): TEST_NET
     Do you want to save it? [y/n]: y
-    Enter a Symbol Node URL. (Example: http://localhost:3000): http://api-01.ap-northeast-1.testnet-0951-v1.symboldev.network:3000/
+    Enter a Symbol Node URL. (Example: http://localhost:3000): http://api-01.us-east-1.096x.symboldev.network:3000/
     Insert profile name: certificate
 
 *************************
@@ -138,14 +138,3 @@ You can now **decrypt the message** using either the certificate account or addr
         :end-before: /* end block 01 */
 
 If you managed to read the message, try to decrypt it using another unrelated account to ensure that only the defined participants can read the encrypted content.
-
-*************************
-Method #02: Using the CLI
-*************************
-
-Encrypt the message
-===================
-
-.. viewsource:: ../../resources/examples/bash/transfer/SendingAnEncryptedTransferTransaction.sh
-    :language: bash
-    :start-after: #!/bin/sh

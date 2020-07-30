@@ -3,10 +3,8 @@ Account
 #######
 
 An account is a :ref:`key pair <keypair>` (private and public key) associated with a mutable state stored on the blockchain.
-In other words, you have a **deposit box**, which only you can modify with your private key.
 
-Think of an account as **container for assets**.
-It can be used to hold XYM or other mosaics, whether they are tokens or specialized assets.
+In other words, an account is a **deposit box**, which can be used to hold XYM, other mosaics, and specialized assets. However, the assets holded in the box can only be moved with the associated private key.
 
 Moreover, |codename| accounts can also represent **non-fungible assets** that must be unique and updatable: a package to be shipped, a house deed, or a document to be notarized.
 
@@ -61,17 +59,17 @@ Restrictions
 
 Accounts may configure a set of smart rules to block announcing or receiving transactions given a series of :doc:`restrictions <account-restriction>`.
 
-**********************************
-Hierarchical Deterministic Wallets
-**********************************
+**********
+HD Wallets
+**********
 
-Symbol supports a multi-account hierarchy, enabling the generation of multiple accounts from a single binary seed. The seed is encoded as a mnemonic passphrase - a group of 24 human-readable words - using elliptic curve mathematics.
+An HD Wallet, or Hierarchical Deterministic Wallet, enables the generation of multiple accounts from a single binary seed.
+The seed is encoded as a mnemonic passphrase - a group of 24 human-readable words - using elliptic curve mathematics.
 
-As the child accounts share a common seed, the owner of the HD wallet can backup the accounts derived by securely storing a single mnemonic passphrase. Additionally, the multi-account hierarchy supports several chains of keypairs (multiple trees), giving the owner selective use and sharing of accounts.
+|codename| supports multi-account hierarchy on the client-side.
+The `NIP-6 <https://github.com/nemtech/NIP/blob/main/NIPs/nip-0006.md>`_ defines the protocol to create HD Wallets on |codename|.
 
-Symbol uses the **hardened child key derivation scheme**, which means that child private keys are derived from parent private keys. The `NIP-6 <https://github.com/nemtech/NIP/blob/master/NIPs/nip-0006.md>`_ defines the complete specification on how HD wallets are defined on Symbol.
-
-To generate new HD Wallets, you can use the library `symbol-hd-wallets <https://github.com/nemfoundation/symbol-hd-wallets>`_, available for TypeScript and JavaScript.
+To generate new HD Wallets, use the library `symbol-hd-wallets <https://github.com/nemtech/symbol-hd-wallets>`_.
 
 ******
 Guides
